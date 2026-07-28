@@ -45,6 +45,7 @@ MARK: board
     display: flex;
     justify-content: center;
     align-items: center;
+    size: 5rem;
   }
   .cell:hover {
     cursor: pointer;
