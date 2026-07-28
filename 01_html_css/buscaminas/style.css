@@ -1,0 +1,82 @@
+:root {
+  --red: #F25260;
+  --green: #27BF0F;
+  --gray: #EBEFF2;
+  --hover: #ADD9CC;
+  --cell-size: 50px;
+}
+
+
+
+header{
+  display: flex;
+  justify-content: center;
+}
+
+/* 
+  MARK: buttons board
+*/
+.selected {
+  background-color: #3d79c7;
+  color: white;
+}
+
+/* 
+MARK: board 
+*/
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#board {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0 auto;
+  width: 100%;
+  
+  .cell {
+    background-color: var(--gray);
+    height: var(--cell-size);
+    border-radius: 2px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cell:hover {
+    cursor: pointer;
+    background-color: var(--hover);
+  }
+  
+  .clicked {
+    pointer-events: none;
+    background-color: var(--green);
+  }
+
+  .bomb {
+    pointer-events: none;
+    background-color: var(--red);
+  }
+}
+
+.not_event_listeners {
+  pointer-events: none;
+}
+
+.board_small {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.board_medium {
+  grid-template-columns: repeat(8, 1fr);
+}
+.board_large {
+  grid-template-columns: repeat(10, 1fr);
+}
+
+
+
+
