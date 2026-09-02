@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevMeetup 2026</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+  <!-- CDN de Bootstrap o Tailwind aquí -->
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">DevMeetup 2026</div>
+      <ul>
+        <li><a href="#ponentes">Ponentes</a></li>
+        <li><a href="#horario">Horario</a></li>
+        <li><a href="#inscripcion">Inscripción</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="inicio">
+      <h1>DevMeetup 2026</h1>
+      <p>El encuentro de desarrolladores web más importante del año.</p>
+      <a href="#inscripcion">Reserva tu plaza</a>
+    </section>
+
+    <section id="sobre-el-evento">
+      <h2>Sobre el evento</h2>
+      <article>
+        <p>Dos días de charlas, talleres y networking sobre desarrollo web moderno: frontend, backend, bases de datos y despliegue en producción.</p>
+        <p>Organizado por y para la comunidad de desarrolladores de la región.</p>
+      </article>
+    </section>
+
+    <section id="galeria">
+      <h2>Ediciones anteriores</h2>
+      <img src="https://novelty-international.com/hubfs/53617176275_f4249d55ff_c.jpg">
+    </section>
+
+    <section id="ponentes">
+      <h2>Ponentes</h2>
+      <section class="grid-ponentes">
+        <article class="ponente">
+          <img src="https://randomuser.me/api/portraits/men/1.jpg">
+          <h3>Cesar</h3>
+          <p>Experto en desarrollo web moderno.</p>
+        </article>
+        <article class="ponente">
+          <img src="https://randomuser.me/api/portraits/men/1.jpg">
+          <h3>Erasmo</h3>
+          <p>Experto en Power BI.</p>
+        </article>
+        <article class="ponente">
+          <img src="https://randomuser.me/api/portraits/men/1.jpg">
+          <h3>Pedro</h3>
+          <p>Experto en desarrollo estructural.</p>
+        </article>
+        <article class="ponente">
+          <img src="https://randomuser.me/api/portraits/men/1.jpg">
+          <h3>Jota</h3>
+          <p>Experto en IA.</p>
+        </article>
+      </section>
+    </section>
+
+    <section id="horario">
+      <h2>Horario</h2>
+      <!-- tabla: Hora / Charla / Ponente -->
+       <table>
+          <thead>
+            <tr>
+              <th>Hora</th>
+              <th>Charla</th>
+              <th>Ponente</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>09:00 - 10:00</td>
+              <td>Introducción al desarrollo web</td>
+              <td>Cesar</td>
+            </tr>
+            <tr>
+              <td>10:15 - 11:15</td>
+              <td>Power BI para principiantes</td>
+              <td>Erasmo</td>
+            </tr>
+            <tr>
+              <td>11:30 - 12:30</td>
+              <td>Desarrollo estructural avanzado</td>
+              <td>Pedro</td>
+            </tr>
+            <tr>
+              <td>12:45 - 13:45</td>
+              <td>Inteligencia Artificial aplicada</td>
+              <td>Jota</td>
+            </tr>
+          </tbody>
+       </table>
+    </section>
+
+    <section id="inscripcion">
+      <h2>Inscríbete</h2>
+      <form>
+        <!-- nombre, email, select de nivel, checkbox, botón -->
+         <label for="nombre">Nombre:</label>
+         <input type="text" id="nombre" name="nombre" required>
+         <label for="email">Email:</label>
+         <input type="email" id="email" name="email" required>
+         <label for="nivel">Nivel de experiencia:</label>
+         <select id="nivel" name="nivel">
+           <option value="principiante">Principiante</option>
+           <option value="intermedio">Intermedio</option>
+           <option value="avanzado">Avanzado</option>
+         </select>
+
+
+         <label for="terminos">
+           <input type="checkbox" id="terminos" name="terminos" required>
+           Acepto los términos y condiciones
+         </label>
+         
+         <br>
+         <button type="submit" class="btn">Inscribirme</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <!-- redes y copyright -->
+     <p>&copy; 2026 Conferencia de Desarrollo Web. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
