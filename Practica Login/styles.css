@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #222;
+  line-height: 1.5;
+}
+
+header {
+  background: #1f2937;
+  color: white;
+  padding: 24px;
+  text-align: center;
+}
+
+header p {
+  opacity: 0.85;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+form input, form select, form button {
+  display: block;
+  margin-bottom: 16px;
+  padding: 8px;
+  width: 100%;
+}
+
+form button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: auto;
+}
+
+form button:hover {
+  background: #1d4ed8;
+}
+
+.exito {
+  background: #dcfce7;
+  color: #166534;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.errores {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 12px 12px 12px 28px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+p.errores {
+  padding: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background: #1f2937;
+  color: white;
+}
+
+a {
+  color: #2563eb;
+}
