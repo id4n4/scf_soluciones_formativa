@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #faf6f1;
+    color: #333;
+}
+
+header {
+    text-align: center;
+}
+
+.subtitulo {
+    color: #777;
+}
+
+/* Clase que añadirá JavaScript con classList.add */
+.destacado {
+    font-weight: bold;
+    color: #6b3e26;
+    text-transform: uppercase;
+}
+
+.botones {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    background: #6b3e26;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 4px;
+}
+
+button:hover {
+    background: #8a5236;
+}
+
+.carta {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 15px;
+}
+
+/* Cada tarjeta que crea JavaScript lleva la clase "producto" */
+.producto {
+    background: white;
+    border: 2px solid #e2d3c4;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.producto h2 {
+    font-size: 18px;
+    margin: 0 0 8px;
+}
+
+.precio {
+    font-size: 20px;
+    color: #6b3e26;
+    margin: 0;
+}
+
+/* Clase que se pone y se quita con classList.toggle */
+.oferta {
+    border-color: #9F026B;
+    background: #fbe9f3;
+}
+
+.oferta::after {
+    content: "¡OFERTA!";
+    display: block;
+    margin-top: 8px;
+    color: #9F026B;
+    font-weight: bold;
+}
+
+#contador {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}

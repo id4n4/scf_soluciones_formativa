@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 · Repaso final: datos, DOM, eventos y asincronía</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../soluciones/15_repaso_final.html">Ver la solución</a></p>
+    <h1>15. Repaso final: datos, DOM, eventos y asincronía</h1>
+
+<div class="zona">
+    <button id="btn-tareas">Cargar tareas</button>
+    <p id="estado-tareas"></p>
+    <ul id="lista"></ul>
+</div>
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 15 · Repaso final: datos, DOM, eventos y asincronía
+        //
+        // QUÉ TIENES QUE HACER
+        //  1. Completa obtenerTareas(): una promesa que tarda 1 segundo y devuelve el array tareas.
+        //  2. Al pulsar el botón (función async): escribe "Cargando...", espera las tareas con await y, con filter, quédate solo con las que NO están hechas.
+        //  3. Por cada tarea pendiente crea un li con su texto y mételo en #lista.
+        //  4. Escribe en #estado-tareas cuántas quedan: "Quedan 2 tareas". Usa try / catch por si falla.
+        //
+        // RESULTADO ESPERADO
+        //  Al pulsar: Cargando... y al segundo:
+        //  Quedan 2 tareas
+        //  • Estudiar el DOM
+        //  • Hacer la práctica
+
+        const tareas = [
+            { texto: "Repasar variables",  hecha: true  },
+            { texto: "Estudiar el DOM",    hecha: false },
+            { texto: "Hacer la práctica",  hecha: false },
+        ];
+
+        const btn    = document.getElementById("btn-tareas");
+        const estado = document.getElementById("estado-tareas");
+        const lista  = document.getElementById("lista");
+
+        function obtenerTareas() {
+            // TODO 1: return new Promise(...) que tras 1000 ms haga resolve(tareas)
+
+        }
+
+        btn.addEventListener("click", async () => {
+            // TODO 2: estado "Cargando...", await obtenerTareas(), filter de las no hechas
+            // TODO 3: un li por cada pendiente (createElement + appendChild)
+            // TODO 4: "Quedan X tareas" y try / catch
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11 · Validar un formulario</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../ejercicios/11_formulario_submit.html">Ver el ejercicio</a></p>
+    <h1>11. Validar un formulario · solución</h1>
+
+<div class="zona">
+    <form id="formulario">
+        <input id="email" placeholder="Email">
+        <input id="clave" type="password" placeholder="Contraseña">
+        <button type="submit">Entrar</button>
+    </form>
+    <p id="mensaje"></p>
+</div>
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 11 · Validar un formulario  (SOLUCIÓN)
+        //
+        // RESULTADO ESPERADO
+        //  Pulsando Entrar con todo vacío: Rellena todos los campos
+        //  Con clave 123: La contraseña es muy corta
+        //  Con clave 123456: Formulario correcto
+
+        const formulario = document.getElementById("formulario");
+        const email   = document.getElementById("email");
+        const clave   = document.getElementById("clave");
+        const mensaje = document.getElementById("mensaje");
+
+        formulario.addEventListener("submit", (e) => {
+            e.preventDefault();   // sin esto, la página se recarga y no vemos nada
+
+            if (email.value.trim() === "" || clave.value.trim() === "") {
+                mensaje.textContent = "Rellena todos los campos";
+                mensaje.className = "error";
+            } else if (clave.value.length < 6) {
+                mensaje.textContent = "La contraseña es muy corta";
+                mensaje.className = "error";
+            } else {
+                mensaje.textContent = "Formulario correcto";
+                mensaje.className = "ok";
+            }
+        });
+    </script>
+</body>
+</html>

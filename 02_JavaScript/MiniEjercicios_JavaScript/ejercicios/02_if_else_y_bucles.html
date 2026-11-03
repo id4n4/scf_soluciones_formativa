@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 · if / else y bucles</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../soluciones/02_if_else_y_bucles.html">Ver la
+            solución</a></p>
+    <h1>2. if / else y bucles</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 2 · if / else y bucles
+        //
+        // QUÉ TIENES QUE HACER
+        //  1. Completa el if para que muestre "Aprobado" si la nota es 5 o más, y "Suspenso" si no.
+        //  2. Haz un for que muestre los números del 1 al 5.
+        //
+        // RESULTADO ESPERADO
+        //  Nota 7: Aprobado
+        //  Nota 3: Suspenso
+        //  1
+        //  2
+        //  3
+        //  4
+        //  5
+
+        function evaluar(nota) {
+            // TODO 1: if / else
+            //   si nota >= 5 → mostrar("Nota " + nota + ": Aprobado")
+            //   si no        → mostrar("Nota " + nota + ": Suspenso")
+            if (nota >= 5)
+                mostrar(`Nota ${nota}: aprobado`)
+            else
+                mostrar(`Nota ${nota}: Suspenso`)
+
+        }
+
+        evaluar(7);
+        evaluar(3);
+
+        // TODO 2: for del 1 al 5 (pista: let i = 1; i <= 5; i++)
+        for (let i = 1; i <= 5; i++) {
+            mostrar(i)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14 · async / await</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../soluciones/14_async_await.html">Ver la solución</a></p>
+    <h1>14. async / await</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 14 · async / await
+        //
+        // QUÉ TIENES QUE HACER
+        //  1. Ya tienes esperar(ms) y dividir(a, b), que devuelven promesas.
+        //  2. Completa la función async contarAtras(): muestra 3, 2, 1 y "¡Despegue!" con un segundo entre cada uno usando await esperar(1000).
+        //  3. Completa probarDivision(): con try / catch, muestra el resultado de dividir(10, 2) y luego intenta dividir(5, 0), mostrando el error.
+        //
+        // RESULTADO ESPERADO
+        //  3
+        //  2
+        //  1
+        //  ¡Despegue!
+        //  10 / 2 = 5
+        //  Error: No se puede dividir entre 0
+
+        const esperar = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+        function dividir(a, b) {
+            return new Promise((resolve, reject) => {
+                if (b === 0) reject(new Error("No se puede dividir entre 0"));
+                else resolve(a / b);
+            });
+        }
+
+        async function contarAtras() {
+            // TODO 1: un for de 3 a 1 con await esperar(1000) y mostrar(i)
+            //         y al final mostrar("¡Despegue!")
+
+        }
+
+        async function probarDivision() {
+            // TODO 2: try { const r = await dividir(10, 2); ... await dividir(5, 0); }
+            //         catch (error) { mostrar("Error: " + error.message); }
+
+        }
+
+        async function empezar() {
+            await contarAtras();
+            await probarDivision();
+        }
+
+        empezar();
+    </script>
+</body>
+</html>

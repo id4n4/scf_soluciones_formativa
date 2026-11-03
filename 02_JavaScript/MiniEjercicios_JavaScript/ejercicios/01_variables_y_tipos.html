@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 · Variables y tipos de datos</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../soluciones/01_variables_y_tipos.html">Ver la
+            solución</a></p>
+    <h1>1. Variables y tipos de datos</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 1 · Variables y tipos de datos
+        //
+        // QUÉ TIENES QUE HACER
+        //  1. Crea una constante curso con el texto "IFCD0210".
+        //  2. Crea una variable alumnos con el número 15 y después súmele 1.
+        //  3. Crea una variable aprobado con el valor true.
+        //  4. Muestra el tipo de cada una con typeof.
+        //
+        // RESULTADO ESPERADO
+        //  curso: IFCD0210 → string
+        //  alumnos: 16 → number
+        //  aprobado: true → boolean
+
+        // TODO 1: const curso
+        const curso = 'IFCD0210'
+
+
+        // TODO 2: let alumnos (y súmele 1 en la línea siguiente)
+        let alumnos = 15
+        alumnos++
+
+
+        // TODO 3: let aprobado
+        let aprobado = true
+
+
+        // TODO 4: quita las barras // de estas líneas cuando tengas las variables
+        mostrar("curso:", curso, "→", typeof curso);
+        mostrar("alumnos:", alumnos, "→", typeof alumnos);
+        mostrar("aprobado:", aprobado, "→", typeof aprobado);
+    </script>
+</body>
+
+</html>

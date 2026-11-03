@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 · Ámbito (scope)</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../ejercicios/05_ambito_scope.html">Ver el ejercicio</a></p>
+    <h1>5. Ámbito (scope) · solución</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 5 · Ámbito (scope)  (SOLUCIÓN)
+        //
+        // RESULTADO ESPERADO
+        //  Dentro de la función veo el total: 3
+        //  Mensaje: Hay alumnos
+
+        const total = 3;          // global: se ve en todo el script
+
+        function revisar() {
+            mostrar("Dentro de la función veo el total:", total);
+
+            let mensaje = "";               // declarada en la función: se ve en toda la función
+            if (total > 0) {
+                mensaje = "Hay alumnos";    // aquí solo le damos valor
+            }
+
+            mostrar("Mensaje:", mensaje);
+        }
+
+        revisar();
+    </script>
+</body>
+</html>

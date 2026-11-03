@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 · Ámbito (scope)</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../soluciones/05_ambito_scope.html">Ver la
+            solución</a></p>
+    <h1>5. Ámbito (scope)</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 5 · Ámbito (scope)
+        //
+        // QUÉ TIENES QUE HACER
+        //  1. Ejecuta el ejercicio y lee la consola: hay un error. Averigua por qué.
+        //  2. Arréglalo declarando mensaje FUERA del if (con let), y dentro del if solo dale valor.
+        //
+        // RESULTADO ESPERADO
+        //  Dentro de la función veo el total: 3
+        //  Mensaje: Hay alumnos
+
+        const total = 3;          // global: se ve en todo el script
+
+        function revisar() {
+            mostrar("Dentro de la función veo el total:", total);
+            let mensaje = ''
+
+            if (total > 0) {
+                mensaje = "Hay alumnos";   // let: solo existe dentro de estas llaves { }
+            }
+
+            // TODO: esta línea da error "mensaje is not defined". Arréglalo.
+            mostrar("Mensaje:", mensaje);
+        }
+
+        revisar();
+    </script>
+</body>
+
+</html>

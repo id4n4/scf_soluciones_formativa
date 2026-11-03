@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutería La Huerta · Tienda online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🥕 Frutería La Huerta</h1>
+        <p>Fruta, verdura y despensa de temporada, a domicilio</p>
+    </header>
+
+    <main class="tienda">
+        <!-- CATÁLOGO -->
+        <section class="catalogo">
+            <div class="herramientas">
+                <div id="filtros" class="filtros">
+                    <button class="filtro activo" data-categoria="todas">Todas</button>
+                    <button class="filtro" data-categoria="fruta">Fruta</button>
+                    <button class="filtro" data-categoria="verdura">Verdura</button>
+                    <button class="filtro" data-categoria="despensa">Despensa</button>
+                </div>
+                <input type="search" id="buscador" placeholder="Buscar producto...">
+            </div>
+
+            <p id="estado-catalogo" class="estado">Pulsa F5 si no carga el catálogo.</p>
+
+            <!-- Contenedor VACÍO: las tarjetas las crea JavaScript -->
+            <div id="productos" class="productos"></div>
+        </section>
+
+        <!-- CESTA Y PEDIDO -->
+        <aside class="cesta">
+            <h2>🧺 Mi cesta</h2>
+            <ul id="lista-cesta" class="lista-cesta"></ul>
+            <p id="cesta-vacia" class="estado">La cesta está vacía.</p>
+
+            <div class="totales">
+                <p>Subtotal: <strong id="subtotal">0,00 €</strong></p>
+                <p>Envío: <strong id="envio">0,00 €</strong></p>
+                <p class="total">Total: <strong id="total">0,00 €</strong></p>
+                <p class="nota">Envío gratis a partir de 30 €</p>
+            </div>
+
+            <form id="form-pedido" class="form-pedido" novalidate>
+                <h3>Datos de entrega</h3>
+                <input type="text" id="nombre" placeholder="Nombre y apellidos">
+                <input type="email" id="email" placeholder="Email">
+                <input type="text" id="direccion" placeholder="Dirección de entrega">
+                <label class="check">
+                    <input type="checkbox" id="simular-fallo">
+                    Simular fallo en el pago
+                </label>
+                <button type="submit" id="btn-pagar">Pagar pedido</button>
+            </form>
+
+            <p id="mensaje-pedido" class="mensaje"></p>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

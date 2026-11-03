@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Tienda JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <h1>Mini Tienda</h1>
+
+        <div class="botones">
+            <button onclick="mostrarTodos()">Todos</button>
+            <button onclick="mostrarDisponibles()">Disponibles</button>
+        </div>
+
+        <div id="productos"></div>
+
+        <div class="resumen">
+            <p>
+                Productos disponibles:
+                <strong id="cantidad"></strong>
+            </p>
+
+            <p>
+                Valor del inventario:
+                <strong id="total"></strong>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

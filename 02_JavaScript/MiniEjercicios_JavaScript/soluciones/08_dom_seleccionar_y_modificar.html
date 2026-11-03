@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08 · DOM: seleccionar y modificar</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../ejercicios/08_dom_seleccionar_y_modificar.html">Ver el ejercicio</a></p>
+    <h1>8. DOM: seleccionar y modificar · solución</h1>
+
+<div class="zona">
+    <h2 id="titulo">Título original</h2>
+    <p class="texto">Primer párrafo</p>
+    <p class="texto">Segundo párrafo</p>
+    <p class="texto">Tercer párrafo</p>
+</div>
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 8 · DOM: seleccionar y modificar  (SOLUCIÓN)
+        //
+        // RESULTADO ESPERADO
+        //  En la página: el título cambia y se pone de color; el primer párrafo sale resaltado.
+        //  Párrafos encontrados: 3
+
+        const titulo = document.getElementById("titulo");   // el id sin #
+        titulo.textContent = "Título cambiado con JS";
+        titulo.style.color = "#9F026B";
+
+        const parrafos = document.querySelectorAll(".texto");   // TODOS: una lista
+        mostrar("Párrafos encontrados:", parrafos.length);
+
+        const primero = document.querySelector(".texto");        // el PRIMERO
+        primero.classList.add("activo");
+    </script>
+</body>
+</html>

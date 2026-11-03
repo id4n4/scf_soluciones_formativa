@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 · Funciones tradicionales y funciones flecha</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../soluciones/04_funciones_flecha.html">Ver la
+            solución</a></p>
+    <h1>4. Funciones tradicionales y funciones flecha</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 4 · Funciones tradicionales y funciones flecha
+        //
+        // QUÉ TIENES QUE HACER
+        //  1. Escribe suma como función flecha: const suma = (a, b) => ... (hasta que lo hagas, la consola dará el error "suma is not a function").
+        //  2. Escribe doble como función flecha de un solo parámetro (sin paréntesis).
+        //  3. Dale a saludar un parámetro por defecto "invitado".
+        //
+        // RESULTADO ESPERADO
+        //  suma(2, 3) = 5
+        //  doble(4) = 8
+        //  Hola, Marta
+        //  Hola, invitado
+
+        // Función tradicional (ya hecha, como ejemplo)
+        function resta(a, b) {
+            return a - b;
+        }
+
+        // TODO 1: suma como función flecha
+        const suma = (a, b) => a + b;
+
+        // TODO 2: doble como función flecha de un parámetro
+        const doble = (a) => a * 2;
+
+        // TODO 3: parámetro por defecto
+        const saludar = (nombre = 'invitado') => `Hola, ${nombre}`;
+
+        mostrar("suma(2, 3) =", suma(2, 3));
+        mostrar("doble(4) =", doble(4));
+        mostrar(saludar("Marta"));
+        mostrar(saludar());
+    </script>
+</body>
+
+</html>

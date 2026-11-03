@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.contenedor {
+    width: 700px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.botones {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.producto {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 15px;
+    margin-bottom: 10px;
+
+    background-color: #eeeeee;
+    border-radius: 5px;
+}
+
+.sin-stock {
+    opacity: 0.5;
+}
+
+.resumen {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #eeeeee;
+}

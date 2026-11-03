@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11 · Validar un formulario</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../soluciones/11_formulario_submit.html">Ver la solución</a></p>
+    <h1>11. Validar un formulario</h1>
+
+<div class="zona">
+    <form id="formulario">
+        <input id="email" placeholder="Email">
+        <input id="clave" type="password" placeholder="Contraseña">
+        <button type="submit">Entrar</button>
+    </form>
+    <p id="mensaje"></p>
+</div>
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 11 · Validar un formulario
+        //
+        // QUÉ TIENES QUE HACER
+        //  1. Escucha el evento submit del formulario y usa e.preventDefault() para que la página no se recargue.
+        //  2. Si algún campo está vacío, escribe en #mensaje "Rellena todos los campos" con la clase error.
+        //  3. Si la contraseña tiene menos de 6 caracteres, escribe "La contraseña es muy corta" (clase error).
+        //  4. Si todo está bien, escribe "Formulario correcto" con la clase ok.
+        //
+        // RESULTADO ESPERADO
+        //  Pulsando Entrar con todo vacío: Rellena todos los campos
+        //  Con clave 123: La contraseña es muy corta
+        //  Con clave 123456: Formulario correcto
+
+        const formulario = document.getElementById("formulario");
+        const email   = document.getElementById("email");
+        const clave   = document.getElementById("clave");
+        const mensaje = document.getElementById("mensaje");
+
+        formulario.addEventListener("submit", (e) => {
+            // TODO 1: evita que la página se recargue
+
+
+            // TODO 2, 3 y 4: valida y escribe el mensaje
+            //   pista: mensaje.textContent = "..."; mensaje.className = "error";
+            //   pista: email.value.trim() === ""   y   clave.value.length < 6
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 · setTimeout y callbacks</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../ejercicios/12_settimeout_y_callbacks.html">Ver el ejercicio</a></p>
+    <h1>12. setTimeout y callbacks · solución</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 12 · setTimeout y callbacks  (SOLUCIÓN)
+        //
+        // RESULTADO ESPERADO
+        //  A. Antes
+        //  C. Después
+        //  B. Dentro del setTimeout
+        //  Paso 1
+        //  Paso 2
+        //  Fin
+
+        mostrar("A. Antes");
+        setTimeout(() => {
+            mostrar("B. Dentro del setTimeout");   // se ejecuta medio segundo después
+        }, 500);
+        mostrar("C. Después");                     // JavaScript no espera: esta sale antes que B
+
+        function avisarLuego(texto, ms, callback) {
+            setTimeout(() => {
+                mostrar(texto);
+                callback();                        // aviso de que he terminado
+            }, ms);
+        }
+
+        // Para que el paso 2 empiece cuando acaba el 1, va DENTRO de su callback
+        avisarLuego("Paso 1", 1000, () => {
+            avisarLuego("Paso 2", 1000, () => mostrar("Fin"));
+        });
+    </script>
+</body>
+</html>

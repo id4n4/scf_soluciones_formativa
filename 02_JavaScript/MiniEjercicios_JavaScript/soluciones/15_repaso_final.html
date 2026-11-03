@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 · Repaso final: datos, DOM, eventos y asincronía</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../ejercicios/15_repaso_final.html">Ver el ejercicio</a></p>
+    <h1>15. Repaso final: datos, DOM, eventos y asincronía · solución</h1>
+
+<div class="zona">
+    <button id="btn-tareas">Cargar tareas</button>
+    <p id="estado-tareas"></p>
+    <ul id="lista"></ul>
+</div>
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 15 · Repaso final: datos, DOM, eventos y asincronía  (SOLUCIÓN)
+        //
+        // RESULTADO ESPERADO
+        //  Al pulsar: Cargando... y al segundo:
+        //  Quedan 2 tareas
+        //  • Estudiar el DOM
+        //  • Hacer la práctica
+
+        const tareas = [
+            { texto: "Repasar variables",  hecha: true  },
+            { texto: "Estudiar el DOM",    hecha: false },
+            { texto: "Hacer la práctica",  hecha: false },
+        ];
+
+        const btn    = document.getElementById("btn-tareas");
+        const estado = document.getElementById("estado-tareas");
+        const lista  = document.getElementById("lista");
+
+        function obtenerTareas() {
+            return new Promise((resolve) => {
+                setTimeout(() => resolve(tareas), 1000);
+            });
+        }
+
+        btn.addEventListener("click", async () => {
+            estado.textContent = "Cargando...";
+            lista.innerHTML = "";
+
+            try {
+                const todas = await obtenerTareas();
+                const pendientes = todas.filter(t => !t.hecha);
+
+                pendientes.forEach((tarea) => {
+                    const li = document.createElement("li");
+                    li.textContent = tarea.texto;
+                    lista.appendChild(li);
+                });
+
+                estado.textContent = `Quedan ${pendientes.length} tareas`;
+                mostrar("Pendientes:", pendientes.map(t => t.texto));
+            } catch (error) {
+                estado.textContent = "Error: " + error.message;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07 · Objetos y destructuring</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../soluciones/07_objetos_y_destructuring.html">Ver
+            la solución</a></p>
+    <h1>7. Objetos y destructuring</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 7 · Objetos y destructuring
+        //
+        // QUÉ TIENES QUE HACER
+        //  1. Muestra el nombre del producto con punto y el precio con corchetes.
+        //  2. Cambia el stock a 5.
+        //  3. Con destructuring, saca nombre y precio en dos variables.
+        //  4. Con un array de objetos y map, saca solo los nombres.
+        //
+        // RESULTADO ESPERADO
+        //  Nombre: Taza
+        //  Precio: 12
+        //  Stock nuevo: 5
+        //  Taza cuesta 12 €
+        //  Nombres: ["Taza","Plato","Vaso"]
+
+        const producto = { nombre: "Taza", precio: 12, stock: 20 };
+
+        // TODO 1
+        mostrar("Nombre:", producto.nombre);
+        mostrar("Precio:", producto['precio']);
+
+
+        // TODO 2: cambia el stock a 5
+        producto.stock = 5
+        mostrar("Stock nuevo:", producto.stock);
+
+        // TODO 3: destructuring → const { ... } = producto;
+        const { nombre, precio, stock } = producto
+
+        // mostrar(`${nombre} cuesta ${precio} €`);
+
+        const productos = [
+            { nombre: "Taza", precio: 12 },
+            { nombre: "Plato", precio: 8 },
+            { nombre: "Vaso", precio: 4 },
+        ];
+        // TODO 4: map para quedarte solo con los nombres
+        const nombres = productos.map(v => v.nombre);
+        mostrar("Nombres:", nombres);
+    </script>
+</body>
+
+</html>

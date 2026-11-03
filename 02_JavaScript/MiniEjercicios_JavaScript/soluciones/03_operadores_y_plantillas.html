@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 · Operadores y plantillas de texto</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../ejercicios/03_operadores_y_plantillas.html">Ver el ejercicio</a></p>
+    <h1>3. Operadores y plantillas de texto · solución</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 3 · Operadores y plantillas de texto  (SOLUCIÓN)
+        //
+        // RESULTADO ESPERADO
+        //  5 == "5" → true
+        //  5 === "5" → false
+        //  ¿Entra Ana? true
+        //  ¿Entra Luis? false
+        //  Hola, Ana. Tienes 20 años.
+
+        mostrar('5 == "5" →', 5 == "5");     // true: == convierte el tipo
+        mostrar('5 === "5" →', 5 === "5");   // false: === compara valor Y tipo (usa siempre este)
+
+        function puedeEntrar(tieneEntrada, edad) {
+            return tieneEntrada && edad >= 18;
+        }
+
+        mostrar("¿Entra Ana?", puedeEntrar(true, 20));
+        mostrar("¿Entra Luis?", puedeEntrar(true, 16));
+
+        const nombre = "Ana";
+        const edad = 20;
+        const saludo = `Hola, ${nombre}. Tienes ${edad} años.`;
+        mostrar(saludo);
+    </script>
+</body>
+</html>

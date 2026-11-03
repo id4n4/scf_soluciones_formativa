@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08 · DOM: seleccionar y modificar</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a
+            href="../soluciones/08_dom_seleccionar_y_modificar.html">Ver la solución</a></p>
+    <h1>8. DOM: seleccionar y modificar</h1>
+
+    <div class="zona">
+        <h2 id="titulo">Título original</h2>
+        <p class="texto">Primer párrafo</p>
+        <p class="texto">Segundo párrafo</p>
+        <p class="texto">Tercer párrafo</p>
+    </div>
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 8 · DOM: seleccionar y modificar
+        //
+        // QUÉ TIENES QUE HACER
+        //  1. Selecciona el h2 con getElementById y cambia su texto a "Título cambiado con JS".
+        //  2. Ponle color con style (#9F026B).
+        //  3. Selecciona TODOS los párrafos .texto con querySelectorAll y muestra cuántos hay.
+        //  4. Al primer párrafo (querySelector) añádele la clase "activo".
+        //
+        // RESULTADO ESPERADO
+        //  En la página: el título cambia y se pone de color; el primer párrafo sale resaltado.
+        //  Párrafos encontrados: 3
+
+        // TODO 1: getElementById("titulo") y textContent
+        const titulo = document.getElementById('titulo');
+        titulo.textContent = 'Título cambiado con JS'
+
+        // TODO 2: style.color
+        titulo.style.color = '#9F026B';
+
+        // TODO 3: querySelectorAll(".texto") y su length
+        const parrafos = document.querySelectorAll('.texto');
+        mostrar("Párrafos encontrados:", parrafos.length);
+
+        // TODO 4: querySelector(".texto") y classList.add("activo")
+        const primerParrafo = document.querySelector('.texto')
+        primerParrafo.classList.add('activo')
+    </script>
+</body>
+
+</html>

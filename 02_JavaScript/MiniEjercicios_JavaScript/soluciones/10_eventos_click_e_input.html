@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 · Eventos: click e input</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../ejercicios/10_eventos_click_e_input.html">Ver el ejercicio</a></p>
+    <h1>10. Eventos: click e input · solución</h1>
+
+<div class="zona">
+    <button id="btn-contar">Púlsame</button>
+    <p>Clics: <strong id="clics">0</strong></p>
+    <input id="nombre" placeholder="Escribe tu nombre">
+    <p id="eco">Hola, ...</p>
+</div>
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 10 · Eventos: click e input  (SOLUCIÓN)
+        //
+        // RESULTADO ESPERADO
+        //  Al pulsar 3 veces el botón: Clics: 3
+        //  Al escribir Ana: Hola, Ana
+
+        const boton = document.getElementById("btn-contar");
+        const clics = document.getElementById("clics");
+        const caja  = document.getElementById("nombre");
+        const eco   = document.getElementById("eco");
+
+        let contador = 0;
+
+        boton.addEventListener("click", () => {
+            contador++;
+            clics.textContent = contador;
+            mostrar("Clic número", contador);
+        });
+
+        caja.addEventListener("input", () => {
+            eco.textContent = "Hola, " + caja.value;
+        });
+    </script>
+</body>
+</html>

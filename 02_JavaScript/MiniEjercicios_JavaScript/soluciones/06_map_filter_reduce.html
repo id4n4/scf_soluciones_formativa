@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06 · map, filter y reduce</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../ejercicios/06_map_filter_reduce.html">Ver el ejercicio</a></p>
+    <h1>6. map, filter y reduce · solución</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 6 · map, filter y reduce  (SOLUCIÓN)
+        //
+        // RESULTADO ESPERADO
+        //  Precios: [10,25,8,40]
+        //  Con IVA: [12.1,30.25,9.68,48.4]
+        //  Caros: [25,40]
+        //  Total: 83
+        //  El array original no cambia: [10,25,8,40]
+
+        const precios = [10, 25, 8, 40];
+
+        const conIVA = precios.map(p => p * 1.21);               // transforma cada elemento
+        const caros  = precios.filter(p => p > 15);              // se queda con los que cumplen
+        const total  = precios.reduce((acc, p) => acc + p, 0);   // los junta en un solo valor
+
+        mostrar("Precios:", precios);
+        mostrar("Con IVA:", conIVA.map(p => Number(p.toFixed(2))));
+        mostrar("Caros:", caros);
+        mostrar("Total:", total);
+        mostrar("El array original no cambia:", precios);
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09 · DOM: crear y quitar elementos</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../ejercicios/09_dom_crear_y_quitar.html">Ver el ejercicio</a></p>
+    <h1>9. DOM: crear y quitar elementos · solución</h1>
+
+<div class="zona">
+    <div id="contenedor"></div>
+    <p id="quitame">Este párrafo hay que quitarlo con JavaScript</p>
+</div>
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 9 · DOM: crear y quitar elementos  (SOLUCIÓN)
+        //
+        // RESULTADO ESPERADO
+        //  En la página: 3 tarjetas (Manzana, Pera, Plátano) y el párrafo ya no está.
+        //  Tarjetas creadas: 3
+
+        const contenedor = document.getElementById("contenedor");
+        const frutas = ["Manzana", "Pera", "Plátano"];
+
+        frutas.forEach((fruta) => {
+            const tarjeta = document.createElement("div");   // 1) crear
+            tarjeta.classList.add("tarjeta");                // 2) rellenar
+            tarjeta.textContent = fruta;
+            contenedor.appendChild(tarjeta);                 // 3) meter en la página
+        });
+
+        document.getElementById("quitame").remove();
+
+        mostrar("Tarjetas creadas:", document.querySelectorAll(".tarjeta").length);
+    </script>
+</body>
+</html>

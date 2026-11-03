@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13 · Promesas: resolve, reject, then y catch</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../soluciones/13_promesas.html">Ver la solución</a></p>
+    <h1>13. Promesas: resolve, reject, then y catch</h1>
+
+<div class="zona">
+    <label><input type="checkbox" id="fallar"> Hacer que falle</label>
+    <button id="btn-cargar">Cargar datos</button>
+    <p id="estado">Pulsa el botón</p>
+</div>
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 13 · Promesas: resolve, reject, then y catch
+        //
+        // QUÉ TIENES QUE HACER
+        //  1. Completa cargarDatos(): devuelve una promesa que, al cabo de 1 segundo, hace reject si la casilla está marcada y resolve(["Ana", "Luis", "Marta"]) si no.
+        //  2. En el botón: escribe "Cargando...", llama a cargarDatos() y usa .then() para mostrar los datos y .catch() para mostrar el error.
+        //  3. Con .finally() muestra "Terminado" en la salida.
+        //
+        // RESULTADO ESPERADO
+        //  Sin marcar: Cargando... → Datos: Ana, Luis, Marta
+        //  Marcada: Cargando... → Error: Fallo de conexión
+        //  Terminado (en los dos casos)
+
+        const fallar = document.getElementById("fallar");
+        const btn    = document.getElementById("btn-cargar");
+        const estado = document.getElementById("estado");
+
+        function cargarDatos() {
+            return new Promise((resolve, reject) => {
+                // TODO 1: setTimeout de 1000 ms con if (fallar.checked) reject(...) / else resolve(...)
+
+            });
+        }
+
+        btn.addEventListener("click", () => {
+            estado.textContent = "Cargando...";
+            // TODO 2 y 3: cargarDatos().then(...).catch(...).finally(...)
+
+        });
+    </script>
+</body>
+</html>

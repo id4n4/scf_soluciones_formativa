@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 · Operadores y plantillas de texto</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../soluciones/03_operadores_y_plantillas.html">Ver
+            la solución</a></p>
+    <h1>3. Operadores y plantillas de texto</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 3 · Operadores y plantillas de texto
+        //
+        // QUÉ TIENES QUE HACER
+        //  1. Compara con === y con == el número 5 y el texto "5". Fíjate en la diferencia.
+        //  2. Completa puedeEntrar: true solo si tiene entrada Y es mayor de edad (&&).
+        //  3. Escribe el saludo con una plantilla de texto (comillas invertidas).
+        //
+        // RESULTADO ESPERADO
+        //  5 == "5" → true
+        //  5 === "5" → false
+        //  ¿Entra Ana? true
+        //  ¿Entra Luis? false
+        //  Hola, Ana. Tienes 20 años.
+
+        // TODO 1: quita las barras de las dos líneas y mira el resultado
+        mostrar('5 == "5" →', 5 == "5");
+        mostrar('5 === "5" →', 5 === "5");
+
+
+        function puedeEntrar(tieneEntrada, edad) {
+            // TODO 2: devuelve true solo si tieneEntrada es true Y edad >= 18
+            if (tieneEntrada && edad >= 18) return true
+            return false;
+        }
+
+        mostrar("¿Entra Ana?", puedeEntrar(true, 20));
+        mostrar("¿Entra Luis?", puedeEntrar(true, 16));
+
+        const nombre = "Ana";
+        const edad = 20;
+        // TODO 3: con comillas invertidas → `Hola, ${nombre}. ...`
+        const saludo = `Hola, ${nombre}. ...`;
+        mostrar(saludo);
+    </script>
+</body>
+
+</html>

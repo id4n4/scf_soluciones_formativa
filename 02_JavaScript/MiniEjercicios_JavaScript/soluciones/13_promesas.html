@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13 · Promesas: resolve, reject, then y catch</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../ejercicios/13_promesas.html">Ver el ejercicio</a></p>
+    <h1>13. Promesas: resolve, reject, then y catch · solución</h1>
+
+<div class="zona">
+    <label><input type="checkbox" id="fallar"> Hacer que falle</label>
+    <button id="btn-cargar">Cargar datos</button>
+    <p id="estado">Pulsa el botón</p>
+</div>
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 13 · Promesas: resolve, reject, then y catch  (SOLUCIÓN)
+        //
+        // RESULTADO ESPERADO
+        //  Sin marcar: Cargando... → Datos: Ana, Luis, Marta
+        //  Marcada: Cargando... → Error: Fallo de conexión
+        //  Terminado (en los dos casos)
+
+        const fallar = document.getElementById("fallar");
+        const btn    = document.getElementById("btn-cargar");
+        const estado = document.getElementById("estado");
+
+        function cargarDatos() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (fallar.checked) {
+                        reject(new Error("Fallo de conexión"));   // la promesa falla
+                    } else {
+                        resolve(["Ana", "Luis", "Marta"]);        // la promesa se cumple
+                    }
+                }, 1000);
+            });
+        }
+
+        btn.addEventListener("click", () => {
+            estado.textContent = "Cargando...";
+            estado.className = "";
+
+            cargarDatos()
+                .then((datos) => {
+                    estado.textContent = "Datos: " + datos.join(", ");
+                    estado.className = "ok";
+                })
+                .catch((error) => {
+                    estado.textContent = "Error: " + error.message;
+                    estado.className = "error";
+                })
+                .finally(() => {
+                    mostrar("Terminado");
+                });
+        });
+    </script>
+</body>
+</html>

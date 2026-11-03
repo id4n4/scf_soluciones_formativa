@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 · Variables y tipos de datos</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../ejercicios/01_variables_y_tipos.html">Ver el ejercicio</a></p>
+    <h1>1. Variables y tipos de datos · solución</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 1 · Variables y tipos de datos  (SOLUCIÓN)
+        //
+        // RESULTADO ESPERADO
+        //  curso: IFCD0210 → string
+        //  alumnos: 16 → number
+        //  aprobado: true → boolean
+
+        const curso = "IFCD0210";      // const: no se va a volver a asignar
+        let alumnos = 15;              // let: puede cambiar
+        alumnos = alumnos + 1;         // ahora vale 16
+        let aprobado = true;
+
+        mostrar("curso:", curso, "→", typeof curso);
+        mostrar("alumnos:", alumnos, "→", typeof alumnos);
+        mostrar("aprobado:", aprobado, "→", typeof aprobado);
+    </script>
+</body>
+</html>

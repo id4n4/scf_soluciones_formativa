@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07 · Objetos y destructuring</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../ejercicios/07_objetos_y_destructuring.html">Ver el ejercicio</a></p>
+    <h1>7. Objetos y destructuring · solución</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 7 · Objetos y destructuring  (SOLUCIÓN)
+        //
+        // RESULTADO ESPERADO
+        //  Nombre: Taza
+        //  Precio: 12
+        //  Stock nuevo: 5
+        //  Taza cuesta 12 €
+        //  Nombres: ["Taza","Plato","Vaso"]
+
+        const producto = { nombre: "Taza", precio: 12, stock: 20 };
+
+        mostrar("Nombre:", producto.nombre);       // con punto
+        mostrar("Precio:", producto["precio"]);    // con corchetes
+
+        producto.stock = 5;                        // cambiar una propiedad
+        mostrar("Stock nuevo:", producto.stock);
+
+        const { nombre, precio } = producto;       // destructuring
+        mostrar(`${nombre} cuesta ${precio} €`);
+
+        const productos = [
+            { nombre: "Taza",  precio: 12 },
+            { nombre: "Plato", precio: 8 },
+            { nombre: "Vaso",  precio: 4 },
+        ];
+        const nombres = productos.map(p => p.nombre);
+        mostrar("Nombres:", nombres);
+    </script>
+</body>
+</html>

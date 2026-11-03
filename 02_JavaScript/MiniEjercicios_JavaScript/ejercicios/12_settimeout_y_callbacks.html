@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 · setTimeout y callbacks</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <p><a href="../index.html">← Todos los ejercicios</a> · <a href="../soluciones/12_settimeout_y_callbacks.html">Ver la solución</a></p>
+    <h1>12. setTimeout y callbacks</h1>
+
+
+    <h3>Salida</h3>
+    <pre id="salida"></pre>
+
+    <script src="../comun.js"></script>
+    <script>
+        // EJERCICIO 12 · setTimeout y callbacks
+        //
+        // QUÉ TIENES QUE HACER
+        //  1. Ejecuta y mira el orden de los mensajes: el del setTimeout sale el último.
+        //  2. Completa avisarLuego(texto, ms, callback): espera ms, muestra el texto y después llama al callback.
+        //  3. Úsala para mostrar "Paso 1" y, cuando termine, "Paso 2" (un segundo cada uno).
+        //
+        // RESULTADO ESPERADO
+        //  A. Antes
+        //  C. Después
+        //  B. Dentro del setTimeout
+        //  Paso 1
+        //  Paso 2
+        //  Fin
+
+        mostrar("A. Antes");
+        setTimeout(() => {
+            mostrar("B. Dentro del setTimeout");
+        }, 500);
+        mostrar("C. Después");
+
+        function avisarLuego(texto, ms, callback) {
+            // TODO 1: setTimeout que muestre el texto y luego llame a callback()
+
+        }
+
+        // TODO 2: avisarLuego("Paso 1", 1000, () => {
+        //             avisarLuego("Paso 2", 1000, () => mostrar("Fin"));
+        //         });
+    </script>
+</body>
+</html>

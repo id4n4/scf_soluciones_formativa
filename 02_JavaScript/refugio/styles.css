@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f1f6f4;
+    color: #333;
+}
+
+header {
+    text-align: center;
+}
+
+#resumen {
+    color: #555;
+}
+
+.nuevo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 9px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+}
+
+button {
+    background: #2a7a5f;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #349474;
+}
+
+.lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+/* Cada tarjeta lleva la clase "animal" */
+.animal {
+    background: white;
+    border: 2px solid #cfe3db;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.animal h2 {
+    margin: 0 0 6px;
+    font-size: 20px;
+}
+
+.animal p {
+    margin: 0 0 12px;
+    color: #666;
+}
+
+/* Los botones "Quitar" de las tarjetas */
+.btn-quitar {
+    background: #b23b3b;
+    font-size: 13px;
+    padding: 6px 10px;
+}
+
+.btn-quitar:hover {
+    background: #cc4848;
+}
+
+/* Animales ya adoptados */
+.adoptado {
+    opacity: 0.55;
+    border-style: dashed;
+}
+
+.adoptado h2::after {
+    content: " ✔ adoptado";
+    font-size: 13px;
+    color: #2a7a5f;
+}

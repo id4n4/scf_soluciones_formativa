@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: #f6f8f1;
+    color: #333;
+}
+
+header {
+    background: #3f7d20;
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
+
+header h1 {
+    margin: 0 0 4px;
+}
+
+header p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.tienda {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    align-items: start;
+}
+
+/* ---------- Catálogo ---------- */
+.herramientas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filtros button {
+    background: white;
+    color: #3f7d20;
+    border: 1px solid #3f7d20;
+}
+
+/* El filtro elegido: la clase "activo" la pone JavaScript */
+.filtros button.activo {
+    background: #3f7d20;
+    color: white;
+}
+
+#buscador {
+    padding: 8px 10px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    min-width: 200px;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 14px;
+}
+
+/* Cada tarjeta la crea JavaScript */
+.producto {
+    background: white;
+    border: 1px solid #dfe7d6;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+}
+
+.producto .emoji {
+    font-size: 38px;
+    margin: 0;
+}
+
+.producto h3 {
+    margin: 6px 0;
+    font-size: 17px;
+}
+
+.producto .precio {
+    color: #3f7d20;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+/* ---------- Cesta ---------- */
+.cesta {
+    background: white;
+    border: 1px solid #dfe7d6;
+    border-radius: 10px;
+    padding: 16px;
+    position: sticky;
+    top: 10px;
+}
+
+.cesta h2 {
+    margin-top: 0;
+}
+
+.lista-cesta {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-cesta li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.lista-cesta button {
+    background: #b23b3b;
+    padding: 3px 8px;
+    font-size: 12px;
+}
+
+.totales p {
+    margin: 4px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.totales .total {
+    font-size: 18px;
+}
+
+.totales .nota {
+    font-size: 12px;
+    color: #777;
+}
+
+/* ---------- Formulario ---------- */
+.form-pedido {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.form-pedido h3 {
+    margin: 0;
+}
+
+.form-pedido input[type="text"],
+.form-pedido input[type="email"] {
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+}
+
+/* Campo con error: la clase la pone JavaScript */
+.form-pedido input.invalido {
+    border-color: #c62828;
+    background: #fdecec;
+}
+
+.check {
+    font-size: 13px;
+    color: #666;
+}
+
+/* ---------- Botones y mensajes ---------- */
+button {
+    background: #3f7d20;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:disabled {
+    background: #aaa;
+    cursor: wait;
+}
+
+.estado {
+    color: #777;
+    font-style: italic;
+}
+
+.mensaje {
+    font-weight: bold;
+}
+
+.ok {
+    color: #2e7d32;
+}
+
+.error {
+    color: #c62828;
+}
+
+.cargando {
+    color: #c77700;
+}
+
+@media (max-width: 760px) {
+    .tienda {
+        grid-template-columns: 1fr;
+    }
+}
