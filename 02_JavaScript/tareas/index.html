@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis tareas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Mis tareas</h1>
+    <p>Las tareas se guardan en el navegador con JSON y localStorage</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <form id="form-tarea">
+        <input type="text" id="texto-tarea" placeholder="Escribe una tarea..." autocomplete="off">
+        <button type="submit">Añadir</button>
+      </form>
+      <p id="contador"></p>
+      <ul id="lista-tareas"></ul>
+      <button id="btn-borrar-todo" class="secundario">Borrar todas</button>
+    </section>
+
+    <section class="panel">
+      <h2>Así se guarda (JSON)</h2>
+      <pre id="ver-json"></pre>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
