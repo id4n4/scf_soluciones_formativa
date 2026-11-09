@@ -1,0 +1,44 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f2f4f7; color: #222; }
+header { background: #cc0000; color: white; padding: 20px; text-align: center; border-bottom: 6px solid #222; }
+header h1 { margin: 0 0 6px; }
+header p { margin: 0; opacity: .9; }
+main { max-width: 1000px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 750px) { main { grid-template-columns: 1fr; } }
+.panel { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,.1); }
+h2 { margin-top: 0; font-size: 20px; }
+form { display: flex; gap: 8px; }
+#nombre { flex: 1; padding: 8px; font-size: 15px; border: 1px solid #ccc; border-radius: 6px; }
+button { background: #cc0000; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-size: 15px; cursor: pointer; }
+button:hover { background: #990000; }
+button:disabled { background: #999; cursor: not-allowed; }
+button.secundario { background: #555; margin-top: 12px; }
+#estado { min-height: 22px; font-weight: bold; }
+.cargando { color: #1f4e79; }
+.error { color: #cc0000; }
+.ok { color: #2e7d32; }
+
+/* Tarjeta del resultado */
+.tarjeta { text-align: center; border: 2px solid #eee; border-radius: 10px; padding: 16px; }
+.tarjeta img { width: 160px; height: 160px; image-rendering: pixelated; }
+.tarjeta h3 { margin: 4px 0; text-transform: capitalize; font-size: 22px; }
+.tarjeta .numero { color: #888; }
+.tarjeta .datos { color: #555; }
+
+/* Tipos */
+.tipos { display: flex; justify-content: center; gap: 6px; margin: 8px 0; flex-wrap: wrap; }
+.tipo { padding: 3px 10px; border-radius: 12px; color: white; font-size: 13px; text-transform: capitalize; background: #777; }
+.tipo-fire { background: #f08030; } .tipo-water { background: #6890f0; } .tipo-grass { background: #78c850; }
+.tipo-electric { background: #e0b000; } .tipo-psychic { background: #f85888; } .tipo-ice { background: #78c8c8; }
+.tipo-dragon { background: #7038f8; } .tipo-dark { background: #705848; } .tipo-fairy { background: #ee99ac; }
+.tipo-normal { background: #a8a878; } .tipo-fighting { background: #c03028; } .tipo-flying { background: #a890f0; }
+.tipo-poison { background: #a040a0; } .tipo-ground { background: #c0a038; } .tipo-rock { background: #b8a038; }
+.tipo-bug { background: #a8b820; } .tipo-ghost { background: #705898; } .tipo-steel { background: #8888a8; }
+
+/* Equipo */
+#equipo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; min-height: 60px; }
+.miembro { position: relative; text-align: center; border: 2px solid #eee; border-radius: 10px; padding: 6px; }
+.miembro img { width: 80px; height: 80px; image-rendering: pixelated; }
+.miembro p { margin: 0; text-transform: capitalize; font-size: 14px; }
+.miembro button { position: absolute; top: 4px; right: 4px; background: #eee; color: #cc0000; padding: 2px 7px; font-size: 13px; }
+.vacio { color: #888; grid-column: 1 / -1; }
