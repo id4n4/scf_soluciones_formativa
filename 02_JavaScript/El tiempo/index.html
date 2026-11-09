@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El tiempo · Mis ciudades</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>El tiempo</h1>
+    <p>Consulta el tiempo actual y guarda tus ciudades favoritas</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Buscar ciudad</h2>
+      <form id="form-buscar">
+        <input type="text" id="ciudad" placeholder="Madrid, Sevilla, París..." autocomplete="off">
+        <button type="submit">Buscar</button>
+      </form>
+      <p id="estado"></p>
+      <div id="resultado"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Mis ciudades (<span id="contador">0</span>/5)</h2>
+      <ul id="favoritas"></ul>
+      <button id="btn-vaciar" class="secundario">Borrar todas</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
