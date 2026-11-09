@@ -1,3 +1,4 @@
+// cSpell:disable
 const URL_GEO = "https://geocoding-api.open-meteo.com/v1/search";
 const URL_TIEMPO = "https://api.open-meteo.com/v1/forecast";
 
@@ -45,7 +46,8 @@ const buscarCiudad = async (nombre) => {
 };
 
 const obtenerTiempo = async (ciudad) => {
-  const url = `${URL_TIEMPO}?latitude=${ciudad.latitud}&longitude=${ciudad.longitud}` +
+  const url =
+    `${URL_TIEMPO}?latitude=${ciudad.latitud}&longitude=${ciudad.longitud}` +
     "&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,weather_code&timezone=auto";
   const res = await fetch(url);
   if (!res.ok) {
@@ -68,9 +70,10 @@ const obtenerTiempo = async (ciudad) => {
 const mostrarError = (error) => {
   ciudadActual = null;
   resultado.replaceChildren();
-  const mensaje = error instanceof TypeError
-    ? "No se ha podido conectar. Revisa tu conexión."
-    : error.message;
+  const mensaje =
+    error instanceof TypeError
+      ? "No se ha podido conectar. Revisa tu conexión."
+      : error.message;
   mostrarEstado(mensaje, "error");
 };
 
@@ -93,7 +96,10 @@ const guardarFavoritas = () => {
 
 const guardarCiudad = () => {
   if (favoritas.length >= MAX_CIUDADES) {
-    mostrarEstado("Ya tienes 5 ciudades. Quita una para guardar otra.", "error");
+    mostrarEstado(
+      "Ya tienes 5 ciudades. Quita una para guardar otra.",
+      "error",
+    );
     return;
   }
   if (favoritas.some((ciudad) => ciudad.id === ciudadActual.id)) {
