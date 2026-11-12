@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Components · Tarjetas de usuario</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Mis primeros componentes</h1>
+    <p>Etiquetas HTML propias con Web Components</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Paso 1 · Primer componente</h2>
+      <!-- Aquí irá <saludo-curso> -->
+      <saludo-curso></saludo-curso>
+
+    </section>
+
+    <section class="panel">
+      <h2>Pasos 2 a 4 · Tarjetas escritas en el HTML</h2>
+      <div class="rejilla">
+        <!-- Aquí irán las <tarjeta-usuario> -->
+        <tarjeta-usuario></tarjeta-usuario>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Paso 5 · Tarjetas creadas desde JavaScript</h2>
+      <div class="rejilla" id="lista"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Paso 6 · Avisos con contenido propio</h2>
+      <!-- Aquí irán los <aviso-mensaje> -->
+
+    </section>
+
+    <footer>
+      <h3>Sobre esta práctica</h3>
+      <p>Práctica de Web Components de la UF1842.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

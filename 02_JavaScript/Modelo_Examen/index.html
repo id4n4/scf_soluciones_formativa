@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivero La Hoja Verde</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Vivero La Hoja Verde</h1>
+    <p>Catálogo de plantas</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Catálogo</h2>
+      <div class="filtros">
+        <input type="text" id="buscador" placeholder="Buscar por nombre...">
+        <select id="filtro-categoria">
+          <option value="Todas">Todas las categorías</option>
+          <option value="Interior">Interior</option>
+          <option value="Exterior">Exterior</option>
+          <option value="Cactus">Cactus</option>
+        </select>
+      </div>
+      <p id="contador"></p>
+      <div id="lista-plantas"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Añadir planta</h2>
+      <form id="form-planta">
+        <label for="nombre">Nombre</label>W
+        <input type="text" id="nombre">
+
+        <label for="categoria">Categoría</label>
+        <select id="categoria">
+          <option value="">Elige una categoría</option>
+          <option value="Interior">Interior</option>
+          <option value="Exterior">Exterior</option>
+          <option value="Cactus">Cactus</option>
+        </select>
+
+        <label for="precio">Precio (€)</label>
+        <input type="text" id="precio" placeholder="Ejemplo: 12.50">
+
+        <div id="errores"></div>
+        <button type="submit">Añadir</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
